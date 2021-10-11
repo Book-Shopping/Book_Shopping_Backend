@@ -1,4 +1,4 @@
-nmp init
+nmp init -y
 
 npm i express mongoose
 
