@@ -10,7 +10,7 @@ mongoose.connect(process.env.DATABASE_URL, {
 })
 const db = mongoose.connection
 db.on('error', (error) => console.error(error))
-db.once('open', () => console.log('Connected to Database'))
+db.once('open', () => console.log('Connected to mongo DB'))
 
 app.use(express.json())
 app.use(cors())
@@ -18,4 +18,4 @@ app.use(cors())
 const booksRouter = require('./routes/book')
 app.use('/books', booksRouter)
 
-app.listen(8080, () => console.log('Server Started'))
+app.listen(8080, () => console.log('Server Started...'))
