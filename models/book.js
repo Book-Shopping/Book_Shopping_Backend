@@ -17,27 +17,23 @@ const bookSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  summary:{
+  publisher: {
     type: String,
     required: false
   },
-  publisher:{
+  publisherDate: {
     type: String,
     required: false
   },
-  publisherDate:{
-    type: Date,
-    required: false
-  },
-  ISBN:{
+  genre: {
     type: String,
     required: false
   },
-  genre:{
+  language: {
     type: String,
     required: false
   },
-  language:{
+  summary: {
     type: String,
     required: false
   },

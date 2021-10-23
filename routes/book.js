@@ -26,12 +26,11 @@ router.post('/', async (req, res) => {
     author: req.body.author,
     price: req.body.price,
     image: req.body.image,
-    summary: req.body.summary,
     publisher: req.body.publisher,
     publisherDate: req.body.publisherDate,
-    isbn: req.body.ISBN,
     genre: req.body.genre,
     language: req.body.language,
+    summary: req.body.summary,
   })
   try {
     const newBook = await book.save()
@@ -57,23 +56,20 @@ router.patch('/:id', getBook, async (req, res) => {
   if (req.body.image != null) {
     res.book.image = req.body.image
   }
-  if (req.body.summary != null) {
-    res.book.summary = req.body.summary
-  }
   if (req.body.publisher != null) {
     res.book.publisher = req.body.publisher
   }
   if (req.body.publisherDate != null) {
     res.book.publisherDate = req.body.publisherDate
   }
-  if (req.body.ISBN != null) {
-    res.book.ISBN = req.body.ISBN
-  }
   if (req.body.genre != null) {
     res.book.genre = req.body.genre
   }
   if (req.body.language != null) {
     res.book.language = req.body.language
+  }
+  if (req.body.summary != null) {
+    res.book.summary = req.body.summary
   }
   try {
     const updatedBook = await res.book.save()
