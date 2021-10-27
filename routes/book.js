@@ -15,12 +15,12 @@ router.get('/', async (req, res) => {
 })
 
 // Getting One
-router.get('/:id', getBook, (req, res) => {
+router.get('/book/:id', getBook, (req, res) => {
   res.json(res.book)
 })
 
 // Creating one
-router.post('/', async (req, res) => {
+router.post('/book/', async (req, res) => {
   const book = new Book({
     bookName: req.body.bookName,
     author: req.body.author,
@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
 })
 
 // Updating One
-router.patch('/:id', getBook, async (req, res) => {
+router.patch('/bookupdate/:id', getBook, async (req, res) => {
   if (req.body.bookName != null) {
     res.book.bookName = req.body.bookName
   }
@@ -82,7 +82,7 @@ router.patch('/:id', getBook, async (req, res) => {
 })
 
 // Deleting One
-router.delete('/:id', getBook, async (req, res) => {
+router.delete('/bookdelete/:id', getBook, async (req, res) => {
   try {
     await res.book.remove()
     res.json({
